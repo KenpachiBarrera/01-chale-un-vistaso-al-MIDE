@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Satoshi', sans-serif;
+    background-color: hsl(252, 89%, 7%);
+    font-size: 18px;
+}
+
+.nombre-sala img{
+    width: 100%;
+}
+
+.container{
+    max-width: 1920px;
+    height: 650px;
+    padding: 15px 15px;
+    margin: auto;
+    background-color: #EF78A7;
+}
+
+.container .section-card p {
+    text-align: center;
+}
+
+.container .section-card a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+    background-color: #EFB536;
+    color: #fffff;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.section{
+    padding: 80px 0;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+.section-cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.titulo-seccion-pisos {
+    text-align: center;
+    margin: 0 auto; 
+    border-radius: 25px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    background-color: white;
+    padding: 10px 20px;
+    max-width: 20%; 
+}
+
+.container .section-card p {
+    text-align: center;
+}
+
+.section-card{
+    background-color: #565656;
+    padding: 10px 30px 30px;
+    position: relative;
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.section-card:nth-child(1){
+    --color: #A280B2;
+}
+
+.section-card:nth-child(2){
+    --color: #DE773B;
+}
+
+.section-card:nth-child(3){
+    --color: #85B857;
+}
+
+.section-card:nth-child(4){
+    --color: #7FA5C3;
+}
+
+.section-card::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color);
+    z-index: -1;
+    clip-path: circle(40px at 50% 30%);
+    transition: clip-path 1s ease;
+}
+
+.section-card:hover::before{
+    clip-path: circle(100%);
+    border-radius: 20px;
+}
+
+.section-card span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100px;
+    width: 75px;
+    font-size: 50px;
+    font-weight: bold;
+    transform: translate(30px, 30px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(0, 0%, 0%);
+    transition: transform 1s ease;
+}
+
+.section-card:hover span{
+    transform: translate(0, 30px);
+}
+
+.section-card h2{
+    font-size: 26px;
+    color: hsl(0, 0%, 100%);
+    font-weight: 800;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.section-card p{
+    color: hsl(0, 0%, 85%);
+    line-height: 1.5;
+}
+
+.section-card a{
+    display: inline-block;
+    text-transform: capitalize;
+    color: hsl(0, 0%, 100%);
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.section-card a,
+.section-card h2,
+.section-card p{
+    transition: color 1s ease;
+}
+
+.section-card:hover a,
+.section-card:hover h2,
+.section-card:hover p{
+    color: hsl(0, 0%, 0%);
+}
+
+@media(max-width:991px){
+    .section-cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:575px){
+    .section-cards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
